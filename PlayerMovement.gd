@@ -6,8 +6,6 @@ export (int) var speed = 200
 var _up
 var _down
 
-onready var _screen_size_y = get_viewport_rect().size.y
-
 var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
@@ -30,8 +28,13 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	
+func _on_LeftTeleporter_body_entered(body):
+	if body.name == "PlayerBody":
+		get_tree().change_scene("res://scene2.tscn")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_RightTeleporter_body_entered(body):
+	print("right teleporter collision")
+	if body.name == "PlayerBody":
+		get_tree().change_scene("res://scene1.tscn")
