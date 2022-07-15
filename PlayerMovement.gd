@@ -7,11 +7,15 @@ var _up
 var _down
 
 var velocity = Vector2()
+const scenes = [
+	"res://scenes/area1.tscn",
+	"res://scenes/area2.tscn",
+	"res://scenes/area3.tscn"
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var n = String(name).to_lower()
-	pass
 
 func get_input():
 	velocity = Vector2()
@@ -29,11 +33,23 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	
-func _on_LeftTeleporter_body_entered(body):
+func _on_1Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
-		get_tree().change_scene("res://scene2.tscn")
-
-
-func _on_RightTeleporter_body_entered(body):
+		change_scene(1)
+	
+func _on_2Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
-		get_tree().change_scene("res://scene1.tscn")
+		change_scene(2)
+
+func _on_3Teleporter_body_entered(body):
+	if body.name == "PlayerBody":
+		change_scene(3)
+
+func _on_RandomTeleporter_body_entered(body):
+	var sceneNumber = rand_range(0, len(scenes) + 1) as int
+	if body.name == "PlayerBody":
+		change_scene(sceneNumber)
+	
+func change_scene(sceneNumber):
+	var scene = "res://scenes/area" + sceneNumber as String + ".tscn"
+	get_tree().change_scene(scene)
