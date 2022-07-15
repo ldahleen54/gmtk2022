@@ -35,6 +35,5 @@ func _on_LeftTeleporter_body_entered(body):
 
 
 func _on_RightTeleporter_body_entered(body):
-	print("right teleporter collision")
 	if body.name == "PlayerBody":
 		get_tree().change_scene("res://scene1.tscn")

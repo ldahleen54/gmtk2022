@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/2.PNG" type="Texture" id=1]
 [ext_resource path="res://assets/4.PNG" type="Texture" id=2]
 [ext_resource path="res://PlayerMovement.gd" type="Script" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite_6.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.0192
@@ -26,12 +26,12 @@ texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="PlayerBody"]
-position = Vector2( 483, 257 )
-scale = Vector2( 0.9375, 0.9375 )
-texture = ExtResource( 5 )
+position = Vector2( 484, 265 )
+scale = Vector2( 1.11458, 1.11458 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
-position = Vector2( 483, 258 )
+position = Vector2( 485, 265 )
 shape = SubResource( 1 )
 
 [node name="RightTeleporter" type="Area2D" parent="."]
