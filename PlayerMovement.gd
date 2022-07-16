@@ -1,12 +1,8 @@
 extends KinematicBody2D
-
 export (int) var speed = 200
 
-# Declare member variables here. Examples:
-var _up
-var _down
-
 var velocity = Vector2()
+
 const scenes = [
 	"res://scenes/area1.tscn",
 	"res://scenes/area2.tscn",
@@ -15,6 +11,8 @@ const scenes = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var player_model = get_node("/root/PlayerModel")
+	print(player_model.health)
 	var n = String(name).to_lower()
 
 func get_input():
@@ -38,6 +36,7 @@ func _on_1Teleporter_body_entered(body):
 		change_scene(1)
 	
 func _on_2Teleporter_body_entered(body):
+	print("tele 2 collision")
 	if body.name == "PlayerBody":
 		change_scene(2)
 
@@ -53,3 +52,7 @@ func _on_RandomTeleporter_body_entered(body):
 func change_scene(sceneNumber):
 	var scene = "res://scenes/area" + sceneNumber as String + ".tscn"
 	get_tree().change_scene(scene)
+
+func _on_Area2D_body_entered(body):
+	var player_model = get_node("/root/PlayerModel")
+	player_model.health = player_model.health - 1

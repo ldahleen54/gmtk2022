@@ -40,4 +40,8 @@ texture = ExtResource( 1 )
 position = Vector2( 1009, 17 )
 texture = ExtResource( 4 )
 
+[node name="ItemList" type="ItemList" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
