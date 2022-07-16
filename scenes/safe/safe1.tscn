@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ui/overlay.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
@@ -59,6 +60,8 @@ position = Vector2( 1939, 617.326 )
 rotation = 3.14159
 scale = Vector2( 0.266239, 2.73639 )
 shape = SubResource( 5 )
+
+[node name="Overlay" parent="." instance=ExtResource( 3 )]
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="Safe2Teleporter" to="PlayerBody" method="_on_Safe2Teleporter_body_entered"]

@@ -31,7 +31,6 @@ const scenes = [
 	# "res://scenes/dangerous/danger10.tscn",
 	# "res://scenes/dangerous/danger11.tscn",
 	# "res://scenes/dangerous/danger12.tscn",
-	# "res://scenes/dangerous/danger1.tscn"
 ]
 
 # Called when the node enters the scene tree for the first time.
