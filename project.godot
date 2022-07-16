@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerModel="res://PlayerModel.gd"
+PlayerModel="res://scripts/PlayerModel.gd"
 
 [display]
 

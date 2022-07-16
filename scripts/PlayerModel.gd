@@ -1,8 +1,8 @@
 extends Node
 
 var items = ["dice necklace"]
-# not sure if this should be declared here or elsewhere and if this will be reset after every scene
-var health: int = 6
+const STARTING_HEALTH = 6
+var health: int = STARTING_HEALTH
 
 func _process(delta):
 	if health <= 0:
