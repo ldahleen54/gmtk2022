@@ -2,7 +2,9 @@ extends Node
 
 var items = ["dice necklace"]
 const STARTING_HEALTH = 6
+const STARTING_SCREENS_AWAY = 12
 var health: int = STARTING_HEALTH
+var screens_away: int = STARTING_SCREENS_AWAY
 
 func _process(delta):
 	if health <= 0:
