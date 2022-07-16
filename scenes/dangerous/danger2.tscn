@@ -7,16 +7,16 @@
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 970.5, 10 )
+extents = Vector2( 13, 547 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 16, 557 )
+extents = Vector2( 973.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.5, 548.5 )
+extents = Vector2( 15.5, 545.75 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 967.5, 18 )
+extents = Vector2( 963.5, 18.5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,25 +35,25 @@ shape = SubResource( 1 )
 [node name="StartTeleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter"]
-position = Vector2( 960.5, 0 )
+position = Vector2( 3, 537 )
 shape = SubResource( 2 )
 
 [node name="RandomTeleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
-position = Vector2( 6, 547 )
+position = Vector2( 963.5, 0 )
 shape = SubResource( 3 )
 
 [node name="RandomTeleporter2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter2"]
-position = Vector2( 1925.5, 538.5 )
+position = Vector2( 1921.5, 541.25 )
 shape = SubResource( 4 )
 
 [node name="RandomTeleporter3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
-position = Vector2( 972.5, 1080 )
+position = Vector2( 964.5, 1077.5 )
 shape = SubResource( 5 )
 
 [connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]

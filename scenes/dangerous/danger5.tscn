@@ -7,16 +7,16 @@
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 970.5, 10 )
+extents = Vector2( 958, 9 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 16, 557 )
+extents = Vector2( 9, 547.75 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.5, 548.5 )
+extents = Vector2( 10, 541.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 967.5, 18 )
+extents = Vector2( 970.5, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,31 +32,26 @@ texture = ExtResource( 1 )
 position = Vector2( 938, 448 )
 shape = SubResource( 1 )
 
-[node name="StartTeleporter" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter"]
-position = Vector2( 960.5, 0 )
-shape = SubResource( 2 )
-
 [node name="RandomTeleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
-position = Vector2( 6, 547 )
-shape = SubResource( 3 )
+position = Vector2( 961, 1078 )
+shape = SubResource( 2 )
 
 [node name="RandomTeleporter2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter2"]
-position = Vector2( 1925.5, 538.5 )
+position = Vector2( 1918, 542.25 )
+shape = SubResource( 3 )
+
+[node name="Safe2Teleporter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe2Teleporter"]
+position = Vector2( 0, 531.5 )
 shape = SubResource( 4 )
 
 [node name="RandomTeleporter3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
-position = Vector2( 972.5, 1080 )
+position = Vector2( 960.5, 0 )
 shape = SubResource( 5 )
-
-[connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
-[connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
-[connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
-[connection signal="body_entered" from="RandomTeleporter3" to="PlayerBody" method="_on_RandomTeleporter3_body_entered"]
