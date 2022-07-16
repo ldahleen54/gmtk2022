@@ -22,11 +22,11 @@ const scenes = [
 	 "res://scenes/dangerous/danger1.tscn",
 	 "res://scenes/dangerous/danger2.tscn",
 	 "res://scenes/dangerous/danger3.tscn",
-	# "res://scenes/dangerous/danger4.tscn",
-	# "res://scenes/dangerous/danger5.tscn",
-	# "res://scenes/dangerous/danger6.tscn",
-	# "res://scenes/dangerous/danger7.tscn",
-	# "res://scenes/dangerous/danger8.tscn",
+	 "res://scenes/dangerous/danger4.tscn",
+	 "res://scenes/dangerous/danger5.tscn",
+	 "res://scenes/dangerous/danger6.tscn",
+	 "res://scenes/dangerous/danger7.tscn",
+	 "res://scenes/dangerous/danger8.tscn",
 	# "res://scenes/dangerous/danger9.tscn",
 	# "res://scenes/dangerous/danger10.tscn",
 	# "res://scenes/dangerous/danger11.tscn",
@@ -139,3 +139,7 @@ func _on_Safe11Teleporter_body_entered(body):
 func _on_Safe12Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_safe(12)
+
+
+func _on_RandomTeleport2_body_entered(body):
+	pass # Replace with function body.
