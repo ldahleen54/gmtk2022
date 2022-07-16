@@ -37,7 +37,7 @@ const scenes = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var player_model = get_node("/root/PlayerModel")
-	print(player_model.health)
+	print("player health: ", player_model.health)
 	var n = String(name).to_lower()
 
 func get_input():

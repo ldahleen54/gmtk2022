@@ -8,7 +8,6 @@ var scenes = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_offset(Vector2(0, -297))
-	print("test")
 	
 func _process(delta):
 	if Input.is_action_pressed("ui_down") and selected_index < len(scenes) - 1:
