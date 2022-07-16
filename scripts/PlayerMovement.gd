@@ -18,7 +18,7 @@ const scenes = [
 	 "res://scenes/safe/safe11.tscn",
 	 "res://scenes/safe/safe12.tscn",
 	 "res://scenes/secret/secret1.tscn",
-	# "res://scenes/secret/secret2.tscn",
+	 "res://scenes/secret/secret2.tscn",
 	 "res://scenes/dangerous/danger1.tscn",
 	 "res://scenes/dangerous/danger2.tscn",
 	 "res://scenes/dangerous/danger3.tscn",
@@ -142,3 +142,7 @@ func _on_Safe11Teleporter_body_entered(body):
 func _on_Safe12Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_safe(12)
+
+
+func _on_Secret2Teleport_body_entered(body):
+	pass # Replace with function body.
