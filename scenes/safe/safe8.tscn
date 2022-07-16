@@ -8,16 +8,16 @@
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 966.5, 10 )
+extents = Vector2( 974, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 961.75, 11 )
+extents = Vector2( 11.5, 547 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11, 542 )
+extents = Vector2( 959, 8.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 11.5, 545 )
+extents = Vector2( 12.5, 547 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,33 +33,33 @@ texture = ExtResource( 1 )
 position = Vector2( 938, 448 )
 shape = SubResource( 1 )
 
+[node name="Safe9Teleporter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe9Teleporter"]
+position = Vector2( 964, 0 )
+shape = SubResource( 2 )
+
 [node name="RandomTeleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
-position = Vector2( 956.5, 0 )
-shape = SubResource( 2 )
+position = Vector2( 1.5, 537 )
+shape = SubResource( 3 )
+
+[node name="Safe7Teleporter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe7Teleporter"]
+position = Vector2( 969, 1077.5 )
+shape = SubResource( 4 )
 
 [node name="RandomTeleporter2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter2"]
-position = Vector2( 960.25, 1080 )
-shape = SubResource( 3 )
-
-[node name="Safe1Teleporter" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe1Teleporter"]
-position = Vector2( 1922, 545 )
-shape = SubResource( 4 )
-
-[node name="RandomTeleporter3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
-position = Vector2( 1.5, 535 )
+position = Vector2( 1923.5, 537 )
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 3 )]
 
+[connection signal="body_entered" from="Safe9Teleporter" to="PlayerBody" method="_on_Safe9Teleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
+[connection signal="body_entered" from="Safe7Teleporter" to="PlayerBody" method="_on_Safe7Teleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
-[connection signal="body_entered" from="Safe1Teleporter" to="PlayerBody" method="_on_Safe1Teleporter_body_entered"]
-[connection signal="body_entered" from="RandomTeleporter3" to="PlayerBody" method="_on_RandomTeleporter3_body_entered"]

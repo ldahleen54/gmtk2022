@@ -8,16 +8,16 @@ const scenes = [
 	"res://scenes/safe/safe1.tscn",
 	"res://scenes/safe/safe2.tscn",
 	"res://scenes/safe/safe3.tscn",
-	# "res://scenes/safe/safe4.tscn",
-	# "res://scenes/safe/safe5.tscn",
-	# "res://scenes/safe/safe6.tscn",
-	# "res://scenes/safe/safe7.tscn",
-	# "res://scenes/safe/safe8.tscn",
-	# "res://scenes/safe/safe9.tscn",
-	# "res://scenes/safe/safe10.tscn",
-	# "res://scenes/safe/safe11.tscn",
-	# "res://scenes/safe/safe12.tscn",
-	# "res://scenes/secret/secret1.tscn",
+	 "res://scenes/safe/safe4.tscn",
+	 "res://scenes/safe/safe5.tscn",
+	 "res://scenes/safe/safe6.tscn",
+	 "res://scenes/safe/safe7.tscn",
+	 "res://scenes/safe/safe8.tscn",
+	 "res://scenes/safe/safe9.tscn",
+	 "res://scenes/safe/safe10.tscn",
+	 "res://scenes/safe/safe11.tscn",
+	 "res://scenes/safe/safe12.tscn",
+	 "res://scenes/secret/secret1.tscn",
 	# "res://scenes/secret/secret2.tscn",
 	 "res://scenes/dangerous/danger1.tscn",
 	 "res://scenes/dangerous/danger2.tscn",
@@ -142,3 +142,39 @@ func _on_Safe11Teleporter_body_entered(body):
 func _on_Safe12Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_safe(12)
+
+
+func _on_RandomTeleport2_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Randomteleporter2_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_random_Teleport_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Secret1Teleporter_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Safe5Teleport_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Safe7Teleport_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_RandomTeleport_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Safe7Teleporter_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_Safe9Teleport_body_entered(body):
+	pass # Replace with function body.
