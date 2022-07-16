@@ -19,9 +19,9 @@ const scenes = [
 	# "res://scenes/safe/safe12.tscn",
 	# "res://scenes/secret/secret1.tscn",
 	# "res://scenes/secret/secret2.tscn",
-	# "res://scenes/dangerous/danger1.tscn",
-	# "res://scenes/dangerous/danger2.tscn",
-	# "res://scenes/dangerous/danger3.tscn",
+	 "res://scenes/dangerous/danger1.tscn",
+	 "res://scenes/dangerous/danger2.tscn",
+	 "res://scenes/dangerous/danger3.tscn",
 	# "res://scenes/dangerous/danger4.tscn",
 	# "res://scenes/dangerous/danger5.tscn",
 	# "res://scenes/dangerous/danger6.tscn",
@@ -89,6 +89,7 @@ func _on_Area2D_body_entered(body):
 	player_model.health = player_model.health - 1
 
 func _on_StartTeleporter_body_entered(body):
+	print ("Moved to scene: Start")
 	get_tree().change_scene("res://scenes/safe/start.tscn")
 
 func _on_Safe1Teleporter_body_entered(body):
