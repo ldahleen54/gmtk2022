@@ -8,16 +8,16 @@
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 964, 10 )
+extents = Vector2( 973.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15.5, 543.5 )
+extents = Vector2( 13, 541 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11.5, 546.5 )
+extents = Vector2( 8.5, 541 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 970, 16.75 )
+extents = Vector2( 975, 12 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,33 +33,33 @@ texture = ExtResource( 1 )
 position = Vector2( 938, 448 )
 shape = SubResource( 1 )
 
-[node name="RandomTeleporter" type="Area2D" parent="."]
+[node name="RandomTeleport" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
-position = Vector2( 954, 0 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleport"]
+position = Vector2( 963.5, 0 )
 shape = SubResource( 2 )
+
+[node name="Safe7Teleport" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe7Teleport"]
+position = Vector2( 3, 531 )
+shape = SubResource( 3 )
+
+[node name="Safe5Teleport" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe5Teleport"]
+position = Vector2( 1933.5, 551 )
+shape = SubResource( 4 )
 
 [node name="RandomTeleport2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleport2"]
-position = Vector2( 3.5, 533.5 )
-shape = SubResource( 3 )
-
-[node name="StartTeleporter" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter"]
-position = Vector2( 1921.5, 542.5 )
-shape = SubResource( 4 )
-
-[node name="RandomTeleporter3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
-position = Vector2( 963, 1083.75 )
+position = Vector2( 965, 1083 )
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 3 )]
 
-[connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
+[connection signal="body_entered" from="RandomTeleport" to="PlayerBody" method="_on_RandomTeleport_body_entered"]
+[connection signal="body_entered" from="Safe7Teleport" to="PlayerBody" method="_on_Safe7Teleport_body_entered"]
+[connection signal="body_entered" from="Safe5Teleport" to="PlayerBody" method="_on_Safe5Teleport_body_entered"]
 [connection signal="body_entered" from="RandomTeleport2" to="PlayerBody" method="_on_RandomTeleport2_body_entered"]
-[connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
-[connection signal="body_entered" from="RandomTeleporter3" to="PlayerBody" method="_on_RandomTeleporter3_body_entered"]

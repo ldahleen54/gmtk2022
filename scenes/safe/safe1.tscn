@@ -17,7 +17,7 @@ extents = Vector2( 976.5, 10 )
 extents = Vector2( 970, 10.9526 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 148.856, 551.632 )
+extents = Vector2( 56.3399, 206.132 )
 
 [node name="safe1" type="Node2D"]
 scale = Vector2( 1, 1.00433 )
@@ -56,7 +56,7 @@ shape = SubResource( 4 )
 [node name="RandomTeleporter3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
-position = Vector2( 1939, 617.326 )
+position = Vector2( 1930, 532.196 )
 rotation = 3.14159
 scale = Vector2( 0.266239, 2.73639 )
 shape = SubResource( 5 )
