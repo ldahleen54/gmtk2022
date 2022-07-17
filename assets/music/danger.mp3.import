@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/danger.mp3-cdf47deaa23b3dc271569bc54566d43f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/danger.mp3"
+dest_files=[ "res://.import/danger.mp3-cdf47deaa23b3dc271569bc54566d43f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

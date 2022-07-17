@@ -102,8 +102,9 @@ func _on_Area2D_body_entered(body):
 	player_model.health = player_model.health - 1
 
 func _on_StartTeleporter_body_entered(body):
-	print ("Moved to scene: Start")
-	get_tree().change_scene("res://scenes/safe/start.tscn")
+	if body.name == "PlayerBody":
+		print ("Moved to scene: Start")
+		get_tree().change_scene("res://scenes/safe/start.tscn")
 
 func _on_Safe1Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
@@ -174,15 +175,16 @@ func receive_knockback(damage_source_pos: Vector2):
 	print("receiving knockback")
 	var x_direction = randi() % 3
 	var y_direction = randi() % 3
+	var random = randi() % 1
 	if y_direction == 2:
 		y_direction = -1
 	if x_direction == 2:
 		x_direction = -1
 	if x_direction == 0 and y_direction == 0:
-		x_direction = 2
+		x_direction = random + 1
 	var knockback_direction = Vector2(x_direction, y_direction)
 	var knockback_strength = knockback_modifier
-	var knockback = knockback_direction * 400
+	var knockback = knockback_direction * 300
 	print("total knockback received", knockback)
 	global_position = global_position + knockback
 
