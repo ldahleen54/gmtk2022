@@ -2,7 +2,8 @@ extends KinematicBody2D
 export (int) var speed = 200
 
 var velocity = Vector2()
-
+onready var player_model = get_node("/root/PlayerModel")
+onready var player_node = get_node("PlayerBody")
 # scenes to choose from that can be teleported to includes danger zones that are not on the edge
 const scenes = [
 	"res://scenes/safe/safe1.tscn",
@@ -35,7 +36,6 @@ const scenes = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var player_model = get_node("/root/PlayerModel")
 	print("player health: ", player_model.health)
 	var n = String(name).to_lower()
 
@@ -51,12 +51,14 @@ func get_input():
 		velocity.y -= 1
 	#DEBUG
 	if Input.is_action_just_pressed("damage"):
-		var player_model = get_node("/root/PlayerModel")
+		player_model = get_node("/root/PlayerModel")
 		player_model.health = player_model.health - 1
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
+	print("player position: ", position)
+	player_model.position = position
 	velocity = move_and_slide(velocity)
 
 func _on_RandomTeleporter_body_entered(body):
@@ -142,3 +144,11 @@ func _on_Safe11Teleporter_body_entered(body):
 func _on_Safe12Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_safe(12)
+
+func _on_Enemy1_body_entered(body):
+	if body.name == "PlayerBody":
+		player_model.health = player_model.health - 1
+
+func _on_Enemy2_body_entered(body):
+	if body.name == "PlayerBody":
+		player_model.health = player_model.health - 1
