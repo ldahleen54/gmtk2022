@@ -111,6 +111,7 @@ func _on_Area2D_body_entered(body):
 func _on_StartTeleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		print ("Moved to scene: Start")
+		music_player.change_music("start")
 		get_tree().change_scene("res://scenes/safe/start.tscn")
 
 func _on_Safe1Teleporter_body_entered(body):
