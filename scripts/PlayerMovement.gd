@@ -202,3 +202,7 @@ func _on_Secret1Teleporter_body_entered(body):
 
 func _on_Randomteleporter3_body_entered(body):
 	pass # Replace with function body.
+
+
+func _on_RandomTeleport_body_entered(body):
+	pass # Replace with function body.
