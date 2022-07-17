@@ -529,3 +529,4 @@ __meta__ = {
 [connection signal="body_entered" from="Safe12Teleporter" to="PlayerBody" method="_on_Safe12Teleporter_body_entered"]
 [connection signal="body_entered" from="Safe10Teleporter" to="PlayerBody" method="_on_Safe10Teleporter_body_entered"]
 [connection signal="body_entered" from="Enemy1/Enemy2" to="PlayerBody" method="_on_Enemy2_body_entered"]
+[connection signal="body_entered" from="Enemy2/Enemy2" to="PlayerBody" method="_on_Enemy2_body_entered"]
