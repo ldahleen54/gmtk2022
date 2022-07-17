@@ -128,5 +128,5 @@ __meta__ = {
 process_priority = 1
 position = Vector2( 296, 736 )
 frames = SubResource( 14 )
-frame = 2
+frame = 5
 playing = true
