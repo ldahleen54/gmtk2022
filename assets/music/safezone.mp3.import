@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/safezone.mp3-e83882b5197ae423661b56db199ceffc.mp3str"
+
+[deps]
+
+source_file="res://assets/music/safezone.mp3"
+dest_files=[ "res://.import/safezone.mp3-e83882b5197ae423661b56db199ceffc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
