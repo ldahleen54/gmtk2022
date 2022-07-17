@@ -187,3 +187,7 @@ func receive_knockback(damage_source_pos: Vector2):
 
 
 
+
+
+func _on_Secret2Teleporter_body_entered(body):
+	pass # Replace with function body.
