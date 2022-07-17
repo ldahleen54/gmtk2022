@@ -157,6 +157,12 @@ func _on_Enemy2_body_entered(body):
 	if body.name == "PlayerBody":
 		receive_knockback(body.global_position)
 		player_model.health = player_model.health - 1
+		
+func _on_Spring_body_entered(body):
+	if body.name == "PlayerBody":
+		var scene = "res://scenes/credits.tscn"
+		print("Moved to scene: ", scene)
+		get_tree().change_scene(scene)
 
 func receive_knockback(damage_source_pos: Vector2):
 	print("receiving knockback")
