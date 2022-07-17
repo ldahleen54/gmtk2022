@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=1]
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=2]
 [ext_resource path="res://scenes/ui/overlay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/dangerous/dangermusic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
@@ -69,6 +71,26 @@ z_index = 1
 [node name="DangerMusic" parent="." instance=ExtResource( 4 )]
 
 [node name="Background" type="Node2D" parent="."]
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Portal0" type="Sprite" parent="Portals"]
+position = Vector2( 960, 40 )
+rotation = -1.57079
+texture = ExtResource( 5 )
+
+[node name="Portal1" type="Sprite" parent="Portals"]
+position = Vector2( 963, 1032 )
+rotation = -1.57079
+texture = ExtResource( 6 )
+
+[node name="Right_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 1888, 520 )
+texture = ExtResource( 5 )
+
+[node name="Left_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 32, 520 )
+texture = ExtResource( 6 )
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="Safe3Teleporter" to="PlayerBody" method="_on_Safe3Teleporter_body_entered"]

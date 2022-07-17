@@ -152,3 +152,7 @@ func _on_Enemy1_body_entered(body):
 func _on_Enemy2_body_entered(body):
 	if body.name == "PlayerBody":
 		player_model.health = player_model.health - 1
+
+
+func _on_RandomTeleporter4_body_entered(body):
+	_on_RandomTeleporter_body_entered(body)
