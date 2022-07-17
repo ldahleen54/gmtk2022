@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ui/overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=3]
 [ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=5]
+[ext_resource path="res://scenes/safemusic.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
@@ -80,6 +81,8 @@ texture = ExtResource( 4 )
 [node name="Left_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 32, 520 )
 texture = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 6 )]
 
 [connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
 [connection signal="body_entered" from="Safe6Teleporter" to="PlayerBody" method="_on_Safe6Teleporter_body_entered"]
