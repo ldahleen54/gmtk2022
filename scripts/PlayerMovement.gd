@@ -22,7 +22,6 @@ const scenes = [
 	 "res://scenes/safe/safe9.tscn",
 	 "res://scenes/safe/safe10.tscn",
 	 "res://scenes/safe/safe11.tscn",
-	 "res://scenes/safe/safe12.tscn",
 	 "res://scenes/secret/secret1.tscn",
 	 "res://scenes/secret/secret2.tscn",
 	 "res://scenes/dangerous/danger1.tscn",
@@ -67,8 +66,12 @@ func _physics_process(delta):
 
 func _on_RandomTeleporter_body_entered(body):
 	var sceneNumber = rand_range(0, len(scenes)) as int
-	if(sceneNumber > 13):
+	if sceneNumber > 12:
 		music_player.change_music("danger")
+	elif sceneNumber == 11 or sceneNumber == 12:
+		music_player.change_music("secret")
+	else:
+		music_player.change_music("safe")
 	if body.name == "PlayerBody":
 		print("sceneNumber", sceneNumber)
 		print("Randomly teleported to scene: ", scenes[sceneNumber])
