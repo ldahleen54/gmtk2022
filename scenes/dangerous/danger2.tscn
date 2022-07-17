@@ -84,10 +84,14 @@ z_index = 1
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 3 )]
+z_index = 1
 
 [node name="DangerMusic" parent="." instance=ExtResource( 4 )]
 
 [node name="Background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Biggertile09" type="Sprite" parent="Background"]
 position = Vector2( 672, 424 )
@@ -428,16 +432,7 @@ texture = ExtResource( 13 )
 
 [node name="Biggertile93" type="Sprite" parent="Background"]
 position = Vector2( 1192, 856 )
-scale = Vector2( 0.333334, 0.333334 )
-texture = ExtResource( 12 )
-
-[node name="Biggertile91" type="Sprite" parent="Background"]
-position = Vector2( 768, 280 )
-scale = Vector2( 0.333334, 0.333334 )
-texture = ExtResource( 12 )
-
-[node name="Biggertile92" type="Sprite" parent="Background"]
-position = Vector2( 1416, 112 )
+rotation = -0.261799
 scale = Vector2( 0.333334, 0.333334 )
 texture = ExtResource( 12 )
 
@@ -497,6 +492,12 @@ position = Vector2( 1432, 688 )
 scale = Vector2( 0.583333, 0.583333 )
 texture = ExtResource( 10 )
 
+[node name="Biggertile92" type="Sprite" parent="Background"]
+position = Vector2( 1416, 112 )
+rotation = -0.785397
+scale = Vector2( 0.333334, 0.333334 )
+texture = ExtResource( 12 )
+
 [node name="Biggertile94" type="Sprite" parent="Background"]
 position = Vector2( 1048, 168 )
 scale = Vector2( 0.625, 0.625 )
@@ -507,6 +508,16 @@ texture = ExtResource( 14 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Biggertile94/StaticBody2D"]
 position = Vector2( -0.00012207, -3.05176e-05 )
 shape = SubResource( 7 )
+
+[node name="Biggertile91" type="Sprite" parent="Background"]
+position = Vector2( 768, 280 )
+rotation = 1.309
+scale = Vector2( 0.333334, 0.333334 )
+texture = ExtResource( 12 )
+
+[node name="Biggertile95" type="Sprite" parent="Background"]
+position = Vector2( 1248, -80 )
+texture = ExtResource( 8 )
 
 [node name="Biggertile82" type="Sprite" parent="Background"]
 position = Vector2( 1832, 816 )

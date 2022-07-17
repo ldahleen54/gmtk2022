@@ -71,12 +71,16 @@ z_index = 1
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 3 )]
+z_index = 1
 
 [node name="DangerMusic" parent="." instance=ExtResource( 4 )]
 
 [node name="Background" type="Node2D" parent="."]
 position = Vector2( 1816, 1000 )
 rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Biggertile09" type="Sprite" parent="Background"]
 position = Vector2( 0, 1728 )
@@ -386,7 +390,7 @@ texture = ExtResource( 10 )
 
 [node name="Biggertile62" type="Sprite" parent="Background"]
 position = Vector2( -904, 272 )
-rotation = -1.5708
+rotation = -0.523598
 scale = Vector2( 0.458333, 0.458333 )
 texture = ExtResource( 9 )
 
