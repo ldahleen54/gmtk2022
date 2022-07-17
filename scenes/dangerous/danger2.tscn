@@ -519,6 +519,10 @@ texture = ExtResource( 12 )
 position = Vector2( 1248, -80 )
 texture = ExtResource( 8 )
 
+[node name="Biggertile96" type="Sprite" parent="Background"]
+position = Vector2( 2008, 160 )
+texture = ExtResource( 5 )
+
 [node name="Biggertile82" type="Sprite" parent="Background"]
 position = Vector2( 1832, 816 )
 scale = Vector2( 0.625, 0.625 )

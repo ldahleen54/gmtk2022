@@ -23,6 +23,7 @@ extents = Vector2( 969.25, 8 )
 [node name="Node2D" type="Node2D"]
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="PlayerBody"]
@@ -38,29 +39,36 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
 position = Vector2( 954.5, 0 )
+z_index = 1
 shape = SubResource( 2 )
 
 [node name="Safe3Teleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe3Teleporter"]
 position = Vector2( 0, 540 )
+z_index = 1
 shape = SubResource( 3 )
 
 [node name="Randomteleporter2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Randomteleporter2"]
 position = Vector2( 1920, 537.5 )
+z_index = 1
 shape = SubResource( 4 )
 
 [node name="RandomTeleporter3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
 position = Vector2( 963.25, 1080 )
+z_index = 1
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 3 )]
+z_index = 1
 
 [node name="DangerMusic" parent="." instance=ExtResource( 4 )]
+
+[node name="Background" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="Safe3Teleporter" to="PlayerBody" method="_on_Safe3Teleporter_body_entered"]
