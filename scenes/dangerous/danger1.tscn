@@ -34,16 +34,16 @@ extents = Vector2( 96, 29 )
 extents = Vector2( 144.557, 67.6913 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 965, 5.5 )
+extents = Vector2( 965, 238.5 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 5, 547 )
+extents = Vector2( 278, 547 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 968.5, 10 )
+extents = Vector2( 968.5, 219.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 10, 547 )
+extents = Vector2( 309.5, 547 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -527,26 +527,26 @@ texture = ExtResource( 15 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Portals"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D"]
-position = Vector2( 955, -4.5 )
+position = Vector2( 955, -242.5 )
 shape = SubResource( 7 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Portals"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D2"]
-position = Vector2( -5, 537 )
+position = Vector2( -282, 537 )
 shape = SubResource( 8 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Portals"]
 position = Vector2( -5, 537 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D3"]
-position = Vector2( 961.5, 553 )
+position = Vector2( 961.5, 762.5 )
 shape = SubResource( 9 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Portals"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D4"]
-position = Vector2( 1930, 537 )
+position = Vector2( 2229.5, 537 )
 shape = SubResource( 10 )
 
 [connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
