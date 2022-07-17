@@ -63,6 +63,8 @@ z_index = 1
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 3 )]
+z_index = 1
+z_as_relative = false
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
 z_index = 1
