@@ -17,4 +17,5 @@ func _process(delta):
 		selected_index = selected_index - 1
 		set_offset(Vector2(0, -297))
 	if Input.is_action_pressed("ui_accept"):
+		Input.action_release("ui_acccept")
 		get_tree().change_scene(scenes[selected_index])

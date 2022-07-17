@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=2]
@@ -24,6 +24,9 @@ extents = Vector2( 56.3399, 206.132 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 61.5, 69.2003 )
 
 [node name="safe1" type="Node2D"]
 scale = Vector2( 1, 1.00433 )
@@ -434,8 +437,16 @@ scale = Vector2( 5, 4.81465 )
 z_index = 1
 texture = ExtResource( 7 )
 
-[node name="Biggertile03" type="Sprite" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 288, 191.172 )
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2.5, -1.49332 )
+z_index = 1
+shape = SubResource( 6 )
+
+[node name="Biggertile03" type="Sprite" parent="StaticBody2D"]
 z_index = 1
 texture = ExtResource( 8 )
 
