@@ -1,29 +1,51 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ui/overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=3]
 [ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_04.png" type="Texture" id=6]
+[ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_05.png" type="Texture" id=7]
+[ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_12.png" type="Texture" id=8]
+[ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_06.png" type="Texture" id=9]
+[ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_15.png" type="Texture" id=10]
+[ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_03.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 974.5, 10 )
+extents = Vector2( 96, 21 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 550.5 )
+extents = Vector2( 21, 100 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 12, 549.5 )
+extents = Vector2( 25.5, 96 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 969.5, 16.5 )
+extents = Vector2( 92, 34 )
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 56.0
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 965, 5.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 5, 547 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 968.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 547 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="PlayerBody"]
@@ -38,28 +60,353 @@ shape = SubResource( 1 )
 [node name="Safe12Teleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe12Teleporter"]
-position = Vector2( 964.5, 0 )
+position = Vector2( 960, 11 )
+z_index = 1
 shape = SubResource( 2 )
 
 [node name="Safe10Teleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe10Teleporter"]
-position = Vector2( 0, 540.5 )
+position = Vector2( 11, 516 )
+z_index = 1
 shape = SubResource( 3 )
 
 [node name="RandomTeleporter2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter2"]
-position = Vector2( 1927, 539.5 )
+position = Vector2( 1913.5, 520 )
+z_index = 1
 shape = SubResource( 4 )
 
 [node name="RandomTeleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
-position = Vector2( 962.5, 1083.5 )
+position = Vector2( 964, 1066 )
+z_index = 1
 shape = SubResource( 5 )
 
 [node name="Overlay" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( 8, -8 )
+
+[node name="Biggertile04" type="Sprite" parent="Background"]
+position = Vector2( 88, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile05" type="Sprite" parent="Background"]
+position = Vector2( 280, 1000 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile06" type="Sprite" parent="Background"]
+position = Vector2( 88, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile07" type="Sprite" parent="Background"]
+position = Vector2( 280, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile08" type="Sprite" parent="Background"]
+position = Vector2( 88, 616 )
+rotation = -3.14159
+texture = ExtResource( 7 )
+
+[node name="Biggertile09" type="Sprite" parent="Background"]
+position = Vector2( 280, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile10" type="Sprite" parent="Background"]
+position = Vector2( 472, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile11" type="Sprite" parent="Background"]
+position = Vector2( 664, 808 )
+rotation = 1.57079
+texture = ExtResource( 7 )
+
+[node name="Biggertile12" type="Sprite" parent="Background"]
+position = Vector2( 472, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile13" type="Sprite" parent="Background"]
+position = Vector2( 664, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile14" type="Sprite" parent="Background"]
+position = Vector2( 856, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile15" type="Sprite" parent="Background"]
+position = Vector2( 856, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile16" type="Sprite" parent="Background"]
+position = Vector2( 1048, 1000 )
+rotation = -1.57079
+texture = ExtResource( 7 )
+
+[node name="Biggertile17" type="Sprite" parent="Background"]
+position = Vector2( 1048, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile18" type="Sprite" parent="Background"]
+position = Vector2( 1240, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile19" type="Sprite" parent="Background"]
+position = Vector2( 1240, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile20" type="Sprite" parent="Background"]
+position = Vector2( 1432, 808 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+
+[node name="Biggertile21" type="Sprite" parent="Background"]
+position = Vector2( 1432, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile22" type="Sprite" parent="Background"]
+position = Vector2( 1624, 1000 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile23" type="Sprite" parent="Background"]
+position = Vector2( 1816, 1000 )
+rotation = -1.57079
+texture = ExtResource( 7 )
+
+[node name="Biggertile24" type="Sprite" parent="Background"]
+position = Vector2( 1624, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile25" type="Sprite" parent="Background"]
+position = Vector2( 1816, 808 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile26" type="Sprite" parent="Background"]
+position = Vector2( 472, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile27" type="Sprite" parent="Background"]
+position = Vector2( 664, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile28" type="Sprite" parent="Background"]
+position = Vector2( 856, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile29" type="Sprite" parent="Background"]
+position = Vector2( 1048, 616 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile30" type="Sprite" parent="Background"]
+position = Vector2( 1240, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile31" type="Sprite" parent="Background"]
+position = Vector2( 1432, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile32" type="Sprite" parent="Background"]
+position = Vector2( 1624, 616 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile33" type="Sprite" parent="Background"]
+position = Vector2( 1816, 616 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile34" type="Sprite" parent="Background"]
+position = Vector2( 88, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile35" type="Sprite" parent="Background"]
+position = Vector2( 280, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile36" type="Sprite" parent="Background"]
+position = Vector2( 472, 424 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+
+[node name="Biggertile37" type="Sprite" parent="Background"]
+position = Vector2( 664, 424 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile38" type="Sprite" parent="Background"]
+position = Vector2( 856, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile39" type="Sprite" parent="Background"]
+position = Vector2( 1048, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile40" type="Sprite" parent="Background"]
+position = Vector2( 1240, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile41" type="Sprite" parent="Background"]
+position = Vector2( 1432, 424 )
+rotation = 1.57079
+texture = ExtResource( 7 )
+
+[node name="Biggertile42" type="Sprite" parent="Background"]
+position = Vector2( 1624, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile43" type="Sprite" parent="Background"]
+position = Vector2( 1816, 424 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile44" type="Sprite" parent="Background"]
+position = Vector2( 1816, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile45" type="Sprite" parent="Background"]
+position = Vector2( 1624, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile46" type="Sprite" parent="Background"]
+position = Vector2( 1432, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile47" type="Sprite" parent="Background"]
+position = Vector2( 1240, 232 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile48" type="Sprite" parent="Background"]
+position = Vector2( 1048, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile49" type="Sprite" parent="Background"]
+position = Vector2( 856, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile50" type="Sprite" parent="Background"]
+position = Vector2( 664, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile51" type="Sprite" parent="Background"]
+position = Vector2( 472, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile52" type="Sprite" parent="Background"]
+position = Vector2( 280, 232 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile53" type="Sprite" parent="Background"]
+position = Vector2( 88, 232 )
+rotation = 1.57079
+texture = ExtResource( 7 )
+
+[node name="Biggertile54" type="Sprite" parent="Background"]
+position = Vector2( 88, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile55" type="Sprite" parent="Background"]
+position = Vector2( 280, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile56" type="Sprite" parent="Background"]
+position = Vector2( 472, 40 )
+rotation = -3.14159
+texture = ExtResource( 7 )
+
+[node name="Biggertile57" type="Sprite" parent="Background"]
+position = Vector2( 664, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile58" type="Sprite" parent="Background"]
+position = Vector2( 856, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile59" type="Sprite" parent="Background"]
+position = Vector2( 1048, 40 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile60" type="Sprite" parent="Background"]
+position = Vector2( 1240, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile61" type="Sprite" parent="Background"]
+position = Vector2( 1432, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile62" type="Sprite" parent="Background"]
+position = Vector2( 1624, 40 )
+texture = ExtResource( 6 )
+
+[node name="Biggertile63" type="Sprite" parent="Background"]
+position = Vector2( 1816, 40 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile64" type="Sprite" parent="Background"]
+position = Vector2( 1424, 112 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile65" type="Sprite" parent="Background"]
+position = Vector2( 1712, 344 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile66" type="Sprite" parent="Background"]
+position = Vector2( 664, 80 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile67" type="Sprite" parent="Background"]
+position = Vector2( 168, 704 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile68" type="Sprite" parent="Background"]
+position = Vector2( 648, 912 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile69" type="Sprite" parent="Background"]
+position = Vector2( 1696, 696 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile70" type="Sprite" parent="Background"]
+position = Vector2( 1280, 909 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile72" type="Sprite" parent="Background"]
+position = Vector2( 232, 288 )
+texture = ExtResource( 9 )
+
+[node name="Biggertile74" type="Sprite" parent="Background"]
+position = Vector2( 1224, 504 )
+scale = Vector2( 0.791667, 0.791667 )
+texture = ExtResource( 8 )
+
+[node name="Biggertile03" type="Sprite" parent="Background"]
+position = Vector2( 496, 736 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/Biggertile03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Biggertile03/StaticBody2D"]
+shape = SubResource( 10 )
+
+[node name="Biggertile73" type="Sprite" parent="Background"]
+position = Vector2( 1224, 480 )
+scale = Vector2( 0.583333, 0.583333 )
+texture = ExtResource( 10 )
+
+[node name="Biggertile71" type="Sprite" parent="Background"]
+position = Vector2( 1440, 328 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/Biggertile71"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Biggertile71/StaticBody2D"]
+shape = SubResource( 10 )
+
+[node name="Biggertile75" type="Sprite" parent="Background"]
+position = Vector2( 568, 304 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/Biggertile75"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Biggertile75/StaticBody2D"]
+shape = SubResource( 10 )
 
 [node name="Portals" type="Node2D" parent="."]
 
@@ -80,6 +427,31 @@ texture = ExtResource( 4 )
 [node name="Left_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 32, 520 )
 texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Portals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D"]
+position = Vector2( 955, -4.5 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Portals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D2"]
+position = Vector2( -5, 537 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Portals"]
+position = Vector2( -5, 537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D3"]
+position = Vector2( 961.5, 553 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Portals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D4"]
+position = Vector2( 1930, 537 )
+shape = SubResource( 9 )
 
 [connection signal="body_entered" from="Safe12Teleporter" to="PlayerBody" method="_on_Safe12Teleporter_body_entered"]
 [connection signal="body_entered" from="Safe10Teleporter" to="PlayerBody" method="_on_Safe10Teleporter_body_entered"]
