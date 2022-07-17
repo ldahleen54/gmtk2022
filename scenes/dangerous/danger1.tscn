@@ -96,34 +96,6 @@ z_index = 1
 
 [node name="DangerMusic" parent="." instance=ExtResource( 4 )]
 
-[node name="Enemy1" type="KinematicBody2D" parent="."]
-position = Vector2( 404, 304 )
-z_index = 1
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Enemy1"]
-rotation = 0.00152647
-texture = ExtResource( 12 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Enemy2" type="Area2D" parent="Enemy1"]
-rotation = 1.57246
-z_index = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1/Enemy2"]
-shape = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Background" type="Node2D" parent="."]
 position = Vector2( 1816, 1000 )
 rotation = 1.5708
@@ -514,6 +486,33 @@ texture = ExtResource( 14 )
 [node name="Left_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 32, 520 )
 texture = ExtResource( 15 )
+[node name="Enemy1" type="KinematicBody2D" parent="."]
+position = Vector2( 369, 717 )
+z_index = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Enemy1"]
+rotation = 0.00152647
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Enemy2" type="Area2D" parent="Enemy1"]
+rotation = 1.57246
+z_index = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1/Enemy2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
