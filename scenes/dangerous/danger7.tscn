@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=1]
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=2]
@@ -11,16 +11,28 @@
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 964.5, 10 )
+extents = Vector2( 92, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 550 )
+extents = Vector2( 13, 88 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 12, 544.5 )
+extents = Vector2( 18, 92 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 969.25, 8 )
+extents = Vector2( 84, 24 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 965, 5.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 5, 547 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 968.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 547 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -40,28 +52,28 @@ shape = SubResource( 1 )
 [node name="RandomTeleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter"]
-position = Vector2( 954.5, 0 )
+position = Vector2( 956, 8 )
 z_index = 1
 shape = SubResource( 2 )
 
 [node name="Safe3Teleporter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe3Teleporter"]
-position = Vector2( 0, 540 )
+position = Vector2( 3, 520 )
 z_index = 1
 shape = SubResource( 3 )
 
 [node name="Randomteleporter2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Randomteleporter2"]
-position = Vector2( 1920, 537.5 )
+position = Vector2( 1914, 516 )
 z_index = 1
 shape = SubResource( 4 )
 
 [node name="RandomTeleporter3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomTeleporter3"]
-position = Vector2( 963.25, 1080 )
+position = Vector2( 964, 1064 )
 z_index = 1
 shape = SubResource( 5 )
 
@@ -91,6 +103,31 @@ texture = ExtResource( 5 )
 [node name="Left_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 32, 520 )
 texture = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Portals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D"]
+position = Vector2( 955, -4.5 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Portals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D2"]
+position = Vector2( -5, 537 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Portals"]
+position = Vector2( -5, 537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D3"]
+position = Vector2( 961.5, 553 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Portals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D4"]
+position = Vector2( 1930, 537 )
+shape = SubResource( 9 )
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="Safe3Teleporter" to="PlayerBody" method="_on_Safe3Teleporter_body_entered"]
