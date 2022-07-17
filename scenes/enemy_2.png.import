@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_demon.png-880b3c3344b2c760c4beff32be3d4217.stex"
+path="res://.import/enemy_2.png-460c76c25351e56281cac1600ce2e379.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_demon.png"
-dest_files=[ "res://.import/sprite_demon.png-880b3c3344b2c760c4beff32be3d4217.stex" ]
+source_file="res://scenes/enemy_2.png"
+dest_files=[ "res://.import/enemy_2.png-460c76c25351e56281cac1600ce2e379.stex" ]
 
 [params]
 
