@@ -58,3 +58,8 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe10Teleport"]
 position = Vector2( 1921.5, 545 )
 shape = SubResource( 5 )
+
+[connection signal="body_entered" from="RandomTeleport" to="PlayerBody" method="_on_RandomTeleport_body_entered"]
+[connection signal="body_entered" from="RandomTeleport2" to="PlayerBody" method="_on_RandomTeleport2_body_entered"]
+[connection signal="body_entered" from="Safe8Teleport" to="PlayerBody" method="_on_Safe8Teleport_body_entered"]
+[connection signal="body_entered" from="Safe10Teleport" to="PlayerBody" method="_on_Safe10Teleport_body_entered"]
