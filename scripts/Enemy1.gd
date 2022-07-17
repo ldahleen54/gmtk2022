@@ -17,3 +17,4 @@ func _physics_process(delta):
 		previous_player_health = player_model.health
 	velocity = position.direction_to(player_model.position) * speed
 	move_and_slide(velocity)
+

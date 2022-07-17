@@ -65,17 +65,21 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func _on_RandomTeleporter_body_entered(body):
+	randomize()
 	var sceneNumber = rand_range(0, len(scenes)) as int
-	if sceneNumber > 12:
-		music_player.change_music("danger")
-	elif sceneNumber == 11 or sceneNumber == 12:
-		music_player.change_music("secret")
-	else:
-		music_player.change_music("safe")
 	if body.name == "PlayerBody":
-		print("sceneNumber", sceneNumber)
 		print("Randomly teleported to scene: ", scenes[sceneNumber])
-		get_tree().change_scene(scenes[sceneNumber])
+		if sceneNumber > 12:
+			music_player.change_music("danger")
+			get_tree().change_scene(scenes[sceneNumber])
+		elif sceneNumber == 11 or sceneNumber == 12:
+			music_player.change_music("secret")
+			get_tree().change_scene(scenes[sceneNumber])
+		else:
+			music_player.change_music("safe")
+			get_tree().change_scene(scenes[sceneNumber])
+		print("sceneNumber", sceneNumber)
+
 
 func _on_RandomTeleporter2_body_entered(body):
 	_on_RandomTeleporter_body_entered(body)
@@ -176,6 +180,7 @@ func _on_Spring_body_entered(body):
 
 func receive_knockback(damage_source_pos: Vector2):
 	print("receiving knockback")
+	randomize()
 	var x_direction = randi() % 3
 	var y_direction = randi() % 3
 	var random = randi() % 1
