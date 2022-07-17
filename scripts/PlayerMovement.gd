@@ -173,3 +173,6 @@ func receive_knockback(damage_source_pos: Vector2):
 	var knockback = knockback_direction * 400
 	print("total knockback received", knockback)
 	global_position = global_position + knockback
+
+
+
