@@ -17,3 +17,7 @@ func _physics_process(delta):
 		previous_player_health = player_model.health
 	velocity = position.direction_to(player_model.position) * speed
 	move_and_slide(velocity)
+
+
+func _on_Enemy2_body_entered(body):
+	pass # Replace with function body.

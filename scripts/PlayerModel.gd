@@ -6,7 +6,9 @@ const STARTING_SCREENS_AWAY = 12
 var health: int = STARTING_HEALTH
 var screens_away: int = STARTING_SCREENS_AWAY
 var position: Vector2 = Vector2()
+onready var music_player = get_node("/root/BackgroundMusic")
 
 func _process(delta):
 	if health <= 0:
+		music_player.change_music("start")
 		get_tree().change_scene("res://scenes/death.tscn")
