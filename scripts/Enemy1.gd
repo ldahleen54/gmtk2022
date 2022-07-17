@@ -5,7 +5,5 @@ var move = Vector2.ZERO
 onready var player_model = get_node("/root/PlayerModel")
 
 func _physics_process(delta):
-	print("enemy position", position)
-	print("fake player position", position)
 	var velocity = position.direction_to(player_model.position) * speed
 	move_and_slide(velocity)

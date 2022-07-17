@@ -4,6 +4,10 @@ export (int) var speed = 200
 var velocity = Vector2()
 onready var player_model = get_node("/root/PlayerModel")
 onready var player_node = get_node("PlayerBody")
+
+var receives_knockback: bool = true
+var knockback_modifier: float = 1
+
 # scenes to choose from that can be teleported to includes danger zones that are not on the edge
 const scenes = [
 	"res://scenes/safe/safe1.tscn",
@@ -57,7 +61,6 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	print("player position: ", position)
 	player_model.position = position
 	velocity = move_and_slide(velocity)
 
@@ -147,8 +150,26 @@ func _on_Safe12Teleporter_body_entered(body):
 
 func _on_Enemy1_body_entered(body):
 	if body.name == "PlayerBody":
+		receive_knockback(body.global_position)
 		player_model.health = player_model.health - 1
 
 func _on_Enemy2_body_entered(body):
 	if body.name == "PlayerBody":
+		receive_knockback(body.global_position)
 		player_model.health = player_model.health - 1
+
+func receive_knockback(damage_source_pos: Vector2):
+	print("receiving knockback")
+	var x_direction = randi() % 3
+	var y_direction = randi() % 3
+	if y_direction == 2:
+		y_direction = -1
+	if x_direction == 2:
+		x_direction = -1
+	if x_direction == 0 and y_direction == 0:
+		x_direction = 2
+	var knockback_direction = Vector2(x_direction, y_direction)
+	var knockback_strength = knockback_modifier
+	var knockback = knockback_direction * 400
+	print("total knockback received", knockback)
+	global_position = global_position + knockback
