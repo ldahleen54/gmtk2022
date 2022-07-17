@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ui/overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=3]
+[ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=4]
+[ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
@@ -58,6 +60,26 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Safe10Teleport"]
 position = Vector2( 1921.5, 545 )
 shape = SubResource( 5 )
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Portal0" type="Sprite" parent="Portals"]
+position = Vector2( 960, 40 )
+rotation = -1.57079
+texture = ExtResource( 4 )
+
+[node name="Portal1" type="Sprite" parent="Portals"]
+position = Vector2( 963, 1032 )
+rotation = -1.57079
+texture = ExtResource( 5 )
+
+[node name="Right_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 1888, 520 )
+texture = ExtResource( 4 )
+
+[node name="Left_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 32, 520 )
+texture = ExtResource( 5 )
 
 [connection signal="body_entered" from="RandomTeleport" to="PlayerBody" method="_on_RandomTeleport_body_entered"]
 [connection signal="body_entered" from="RandomTeleport2" to="PlayerBody" method="_on_RandomTeleport2_body_entered"]

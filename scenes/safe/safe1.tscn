@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/Tiles/deadfern.png" type="Texture" id=7]
 [ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_03.png" type="Texture" id=8]
 [ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_01.png" type="Texture" id=9]
+[ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=10]
+[ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 554.121 )
@@ -80,383 +82,405 @@ position = Vector2( 938, 448 )
 z_index = 1
 shape = SubResource( 1 )
 
-[node name="bg" type="Node" parent="."]
+[node name="Background" type="Node2D" parent="."]
+scale = Vector2( 1, 0.995689 )
 
-[node name="Biggertile00" type="Sprite" parent="bg"]
+[node name="Biggertile00" type="Sprite" parent="Background"]
 position = Vector2( 88, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile01" type="Sprite" parent="bg"]
+[node name="Biggertile01" type="Sprite" parent="Background"]
 position = Vector2( 280, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile02" type="Sprite" parent="bg"]
+[node name="Biggertile02" type="Sprite" parent="Background"]
 position = Vector2( 88, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile03" type="Sprite" parent="bg"]
+[node name="Biggertile03" type="Sprite" parent="Background"]
 position = Vector2( 280, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile04" type="Sprite" parent="bg"]
+[node name="Biggertile04" type="Sprite" parent="Background"]
 position = Vector2( 472, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile05" type="Sprite" parent="bg"]
+[node name="Biggertile05" type="Sprite" parent="Background"]
 position = Vector2( 472, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile06" type="Sprite" parent="bg"]
+[node name="Biggertile06" type="Sprite" parent="Background"]
 position = Vector2( 472, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile07" type="Sprite" parent="bg"]
+[node name="Biggertile07" type="Sprite" parent="Background"]
 position = Vector2( 664, 616 )
 rotation = -1.5666
 scale = Vector2( 1.00433, 1 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile09" type="Sprite" parent="bg"]
+[node name="Biggertile09" type="Sprite" parent="Background"]
 position = Vector2( 664, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile08" type="Sprite" parent="bg"]
+[node name="Biggertile08" type="Sprite" parent="Background"]
 position = Vector2( 664, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile10" type="Sprite" parent="bg"]
+[node name="Biggertile10" type="Sprite" parent="Background"]
 position = Vector2( 280, 616 )
 rotation = -1.56124
 scale = Vector2( 1.00433, 1 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile11" type="Sprite" parent="bg"]
+[node name="Biggertile11" type="Sprite" parent="Background"]
 position = Vector2( 88, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile12" type="Sprite" parent="bg"]
+[node name="Biggertile12" type="Sprite" parent="Background"]
 position = Vector2( 88, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile13" type="Sprite" parent="bg"]
+[node name="Biggertile13" type="Sprite" parent="Background"]
 position = Vector2( 280, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile14" type="Sprite" parent="bg"]
+[node name="Biggertile14" type="Sprite" parent="Background"]
 position = Vector2( 472, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile15" type="Sprite" parent="bg"]
+[node name="Biggertile15" type="Sprite" parent="Background"]
 position = Vector2( 664, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile16" type="Sprite" parent="bg"]
+[node name="Biggertile16" type="Sprite" parent="Background"]
 position = Vector2( 856, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile17" type="Sprite" parent="bg"]
+[node name="Biggertile17" type="Sprite" parent="Background"]
 position = Vector2( 856, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile18" type="Sprite" parent="bg"]
+[node name="Biggertile18" type="Sprite" parent="Background"]
 position = Vector2( 856.206, 807.895 )
 rotation = 1.57438
 scale = Vector2( 1.00433, 1 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile19" type="Sprite" parent="bg"]
+[node name="Biggertile19" type="Sprite" parent="Background"]
 position = Vector2( 856, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile20" type="Sprite" parent="bg"]
+[node name="Biggertile20" type="Sprite" parent="Background"]
 position = Vector2( 1048, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile21" type="Sprite" parent="bg"]
+[node name="Biggertile21" type="Sprite" parent="Background"]
 position = Vector2( 1048, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile22" type="Sprite" parent="bg"]
+[node name="Biggertile22" type="Sprite" parent="Background"]
 position = Vector2( 1048, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile23" type="Sprite" parent="bg"]
+[node name="Biggertile23" type="Sprite" parent="Background"]
 position = Vector2( 1048, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile24" type="Sprite" parent="bg"]
+[node name="Biggertile24" type="Sprite" parent="Background"]
 position = Vector2( 88, 240 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile25" type="Sprite" parent="bg"]
+[node name="Biggertile25" type="Sprite" parent="Background"]
 position = Vector2( 88, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile26" type="Sprite" parent="bg"]
+[node name="Biggertile26" type="Sprite" parent="Background"]
 position = Vector2( 280, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile27" type="Sprite" parent="bg"]
+[node name="Biggertile27" type="Sprite" parent="Background"]
 position = Vector2( 472, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile28" type="Sprite" parent="bg"]
+[node name="Biggertile28" type="Sprite" parent="Background"]
 position = Vector2( 280, 248 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile29" type="Sprite" parent="bg"]
+[node name="Biggertile29" type="Sprite" parent="Background"]
 position = Vector2( 472, 240 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile30" type="Sprite" parent="bg"]
+[node name="Biggertile30" type="Sprite" parent="Background"]
 position = Vector2( 664, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile31" type="Sprite" parent="bg"]
+[node name="Biggertile31" type="Sprite" parent="Background"]
 position = Vector2( 664, 248 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile32" type="Sprite" parent="bg"]
+[node name="Biggertile32" type="Sprite" parent="Background"]
 position = Vector2( 848, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile33" type="Sprite" parent="bg"]
+[node name="Biggertile33" type="Sprite" parent="Background"]
 position = Vector2( 856, 248 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile34" type="Sprite" parent="bg"]
+[node name="Biggertile34" type="Sprite" parent="Background"]
 position = Vector2( 1040, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile35" type="Sprite" parent="bg"]
+[node name="Biggertile35" type="Sprite" parent="Background"]
 position = Vector2( 1040, 232 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile36" type="Sprite" parent="bg"]
+[node name="Biggertile36" type="Sprite" parent="Background"]
 position = Vector2( 1232, 240 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile37" type="Sprite" parent="bg"]
+[node name="Biggertile37" type="Sprite" parent="Background"]
 position = Vector2( 1232, 56 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile38" type="Sprite" parent="bg"]
+[node name="Biggertile38" type="Sprite" parent="Background"]
 position = Vector2( 1240, 432 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile39" type="Sprite" parent="bg"]
+[node name="Biggertile39" type="Sprite" parent="Background"]
 position = Vector2( 1240, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile40" type="Sprite" parent="bg"]
+[node name="Biggertile40" type="Sprite" parent="Background"]
 position = Vector2( 1240, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile41" type="Sprite" parent="bg"]
+[node name="Biggertile41" type="Sprite" parent="Background"]
 position = Vector2( 1240, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile42" type="Sprite" parent="bg"]
+[node name="Biggertile42" type="Sprite" parent="Background"]
 position = Vector2( 1432, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile43" type="Sprite" parent="bg"]
+[node name="Biggertile43" type="Sprite" parent="Background"]
 position = Vector2( 1624, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile44" type="Sprite" parent="bg"]
+[node name="Biggertile44" type="Sprite" parent="Background"]
 position = Vector2( 1816, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile45" type="Sprite" parent="bg"]
+[node name="Biggertile45" type="Sprite" parent="Background"]
 position = Vector2( 2008, 1000 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile46" type="Sprite" parent="bg"]
+[node name="Biggertile46" type="Sprite" parent="Background"]
 position = Vector2( 1432, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile47" type="Sprite" parent="bg"]
+[node name="Biggertile47" type="Sprite" parent="Background"]
 position = Vector2( 1624, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile48" type="Sprite" parent="bg"]
+[node name="Biggertile48" type="Sprite" parent="Background"]
 position = Vector2( 1816, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile49" type="Sprite" parent="bg"]
+[node name="Biggertile49" type="Sprite" parent="Background"]
 position = Vector2( 2008, 808 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile50" type="Sprite" parent="bg"]
+[node name="Biggertile50" type="Sprite" parent="Background"]
 position = Vector2( 1432, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile51" type="Sprite" parent="bg"]
+[node name="Biggertile51" type="Sprite" parent="Background"]
 position = Vector2( 1624, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile52" type="Sprite" parent="bg"]
+[node name="Biggertile52" type="Sprite" parent="Background"]
 position = Vector2( 1816, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile53" type="Sprite" parent="bg"]
+[node name="Biggertile53" type="Sprite" parent="Background"]
 position = Vector2( 2008, 616 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile54" type="Sprite" parent="bg"]
+[node name="Biggertile54" type="Sprite" parent="Background"]
 position = Vector2( 1432, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile55" type="Sprite" parent="bg"]
+[node name="Biggertile55" type="Sprite" parent="Background"]
 position = Vector2( 1616, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile56" type="Sprite" parent="bg"]
+[node name="Biggertile56" type="Sprite" parent="Background"]
 position = Vector2( 1808, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile57" type="Sprite" parent="bg"]
+[node name="Biggertile57" type="Sprite" parent="Background"]
 position = Vector2( 2000, 424 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile58" type="Sprite" parent="bg"]
+[node name="Biggertile58" type="Sprite" parent="Background"]
 position = Vector2( 1424, 232 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile59" type="Sprite" parent="bg"]
+[node name="Biggertile59" type="Sprite" parent="Background"]
 position = Vector2( 1424, 48 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile60" type="Sprite" parent="bg"]
+[node name="Biggertile60" type="Sprite" parent="Background"]
 position = Vector2( 1616, 232 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile61" type="Sprite" parent="bg"]
+[node name="Biggertile61" type="Sprite" parent="Background"]
 position = Vector2( 1616, 48 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile62" type="Sprite" parent="bg"]
+[node name="Biggertile62" type="Sprite" parent="Background"]
 position = Vector2( 1808, 48 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile63" type="Sprite" parent="bg"]
+[node name="Biggertile63" type="Sprite" parent="Background"]
 position = Vector2( 1808, 240 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Biggertile64" type="Sprite" parent="bg"]
+[node name="Biggertile64" type="Sprite" parent="Background"]
 position = Vector2( 2000, 240 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 4 )
 
-[node name="Biggertile65" type="Sprite" parent="bg"]
+[node name="Biggertile65" type="Sprite" parent="Background"]
 position = Vector2( 2000, 48 )
 scale = Vector2( 1, 1.00433 )
 texture = ExtResource( 9 )
 
-[node name="Deadfern" type="Sprite" parent="."]
-position = Vector2( 400, 892.189 )
-scale = Vector2( 3.66667, 3.32112 )
+[node name="Deadfern" type="Sprite" parent="Background"]
+position = Vector2( 400, 896.052 )
+scale = Vector2( 3.66667, 3.3355 )
 z_index = 1
 texture = ExtResource( 7 )
 
-[node name="Deadgrass" type="Sprite" parent="."]
-position = Vector2( 720, 693.051 )
-scale = Vector2( 2.66667, 1.99353 )
+[node name="Deadgrass" type="Sprite" parent="Background"]
+position = Vector2( 720, 696.052 )
+scale = Vector2( 2.66667, 2.00216 )
 z_index = 1
 texture = ExtResource( 6 )
 
-[node name="Deadgrass2" type="Sprite" parent="."]
-position = Vector2( 1448, 840.413 )
-scale = Vector2( 2, 2.49138 )
+[node name="Deadgrass2" type="Sprite" parent="Background"]
+position = Vector2( 1448, 844.052 )
+scale = Vector2( 2, 2.50217 )
 z_index = 1
 texture = ExtResource( 6 )
 
-[node name="Deadfern2" type="Sprite" parent="."]
-position = Vector2( 1608, 298.758 )
-scale = Vector2( 5, 4.81465 )
+[node name="Deadfern2" type="Sprite" parent="Background"]
+position = Vector2( 1608, 300.052 )
+scale = Vector2( 5, 4.8355 )
 z_index = 1
 texture = ExtResource( 7 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 288, 191.172 )
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+position = Vector2( 288, 192 )
+scale = Vector2( 1, 1.00433 )
 z_index = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2( 2.5, -1.49332 )
 z_index = 1
 shape = SubResource( 6 )
 
-[node name="Biggertile03" type="Sprite" parent="StaticBody2D"]
+[node name="Biggertile03" type="Sprite" parent="Background/StaticBody2D"]
 z_index = 1
 texture = ExtResource( 8 )
 
-[node name="Biggertile14" type="Sprite" parent="."]
-position = Vector2( 324, 533.896 )
-scale = Vector2( 0.375, 0.5 )
+[node name="Biggertile66" type="Sprite" parent="Background"]
+position = Vector2( 324, 536.208 )
+scale = Vector2( 0.375, 0.502165 )
 z_index = 1
 texture = ExtResource( 5 )
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Portal0" type="Sprite" parent="Portals"]
+position = Vector2( 960, 40 )
+rotation = -1.57079
+texture = ExtResource( 10 )
+
+[node name="Portal1" type="Sprite" parent="Portals"]
+position = Vector2( 963, 1032 )
+rotation = -1.57079
+texture = ExtResource( 11 )
+
+[node name="Right_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 1888, 520 )
+texture = ExtResource( 10 )
+
+[node name="Left_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 32, 520 )
+texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="Safe2Teleporter" to="PlayerBody" method="_on_Safe2Teleporter_body_entered"]
