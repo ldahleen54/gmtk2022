@@ -3,6 +3,7 @@ export (int) var speed = 200
 
 var velocity = Vector2()
 onready var player_model = get_node("/root/PlayerModel")
+onready var music_player = get_node("/root/BackgroundMusic")
 onready var player_node = get_node("PlayerBody")
 
 var receives_knockback: bool = true
@@ -66,6 +67,8 @@ func _physics_process(delta):
 
 func _on_RandomTeleporter_body_entered(body):
 	var sceneNumber = rand_range(0, len(scenes)) as int
+	if(sceneNumber > 13):
+		music_player.change_music("danger")
 	if body.name == "PlayerBody":
 		print("sceneNumber", sceneNumber)
 		print("Randomly teleported to scene: ", scenes[sceneNumber])
@@ -79,12 +82,14 @@ func _on_RandomTeleporter3_body_entered(body):
 	
 func change_scene_safe(sceneNumber):
 	var scene = "res://scenes/safe/safe" + sceneNumber as String + ".tscn"
+	music_player.change_music("safe")
 	print("Moved to scene: ", scene)
 	get_tree().change_scene(scene)
 	
 func change_scene_secret(sceneNumber):
 	var scene = "res://scenes/secret/secret" + sceneNumber as String + ".tscn"
 	print("Moved to scene: ", scene)
+	music_player.change_music("safe")
 	get_tree().change_scene(scene)
 
 func change_scene_test(sceneNumber):

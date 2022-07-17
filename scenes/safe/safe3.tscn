@@ -16,7 +16,6 @@
 [ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_06.png" type="Texture" id=15]
 [ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=16]
 [ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=17]
-[ext_resource path="res://scenes/safemusic.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.5, 51.5 )
@@ -508,7 +507,6 @@ texture = ExtResource( 16 )
 position = Vector2( 32, 520 )
 texture = ExtResource( 17 )
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource( 18 )]
 [node name="StaticBody2D" type="StaticBody2D" parent="Portals"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D"]

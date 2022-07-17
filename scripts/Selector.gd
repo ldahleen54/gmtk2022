@@ -1,5 +1,6 @@
 extends Sprite
 
+onready var music_player = get_node("/root/BackgroundMusic")
 var selected_index = 0
 var scenes = [
 	"res://scenes/safe/start.tscn",
@@ -18,4 +19,6 @@ func _process(delta):
 		set_offset(Vector2(0, -297))
 	if Input.is_action_pressed("ui_accept"):
 		Input.action_release("ui_acccept")
+		if selected_index == 0:
+			music_player.change_music("safe")
 		get_tree().change_scene(scenes[selected_index])

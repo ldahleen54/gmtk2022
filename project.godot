@@ -16,7 +16,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerModel="res://scripts/PlayerModel.gd"
+PlayerModel="*res://scripts/PlayerModel.gd"
+BackgroundMusic="*res://scripts/BackgroundMusic.gd"
 
 [display]
 
