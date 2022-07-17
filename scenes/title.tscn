@@ -134,5 +134,5 @@ autoplay = true
 process_priority = 1
 position = Vector2( 296, 736 )
 frames = SubResource( 14 )
-frame = 9
+frame = 10
 playing = true

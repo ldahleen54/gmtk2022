@@ -89,7 +89,7 @@ func change_scene_safe(sceneNumber):
 func change_scene_secret(sceneNumber):
 	var scene = "res://scenes/secret/secret" + sceneNumber as String + ".tscn"
 	print("Moved to scene: ", scene)
-	music_player.change_music("safe")
+	music_player.change_music("secret")
 	get_tree().change_scene(scene)
 
 func change_scene_test(sceneNumber):
@@ -167,6 +167,7 @@ func _on_Spring_body_entered(body):
 	if body.name == "PlayerBody":
 		var scene = "res://scenes/credits.tscn"
 		print("Moved to scene: ", scene)
+		music_player.change_music("credits")
 		get_tree().change_scene(scene)
 
 func receive_knockback(damage_source_pos: Vector2):
@@ -185,9 +186,10 @@ func receive_knockback(damage_source_pos: Vector2):
 	print("total knockback received", knockback)
 	global_position = global_position + knockback
 
-
-
-
-
 func _on_Secret2Teleporter_body_entered(body):
-	pass # Replace with function body.
+	if body.name == "PlayerBody":
+		change_scene_secret(2)
+
+func _on_Secret1Teleporter_body_entered(body):
+	if body.name == "PlayerBody":
+		change_scene_secret(1)

@@ -16,8 +16,7 @@ func change_music(area: String):
 		player.play()
 	elif area == "danger":
 		previous_area = "danger"
-		player.stop()
-		player.stream = load("res://assets/music/danger.mp3")
+		player.stream = load("res://assets/music/danger.wav")
 		player.play()
 	elif area == "credits":
 		previous_area = "credits"
@@ -26,6 +25,10 @@ func change_music(area: String):
 	elif area == "start":
 		previous_area = "start"
 		player.stream = load("res://assets/music/title.mp3")
+		player.play()
+	elif area == "secret":
+		previous_area = "secret"
+		player.stream = load("res://assets/music/secret.mp3")
 		player.play()
 	else:
 		# default case

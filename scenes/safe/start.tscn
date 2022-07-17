@@ -274,7 +274,6 @@ texture = ExtResource( 6 )
 
 [node name="Biggertile43" type="Sprite" parent="background node"]
 position = Vector2( 1624, 816 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="Biggertile44" type="Sprite" parent="background node"]

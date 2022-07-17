@@ -38,7 +38,7 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="YouDiedScreen" type="Sprite" parent="."]
@@ -50,7 +50,7 @@ texture = ExtResource( 1 )
 position = Vector2( 375, 734 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Selector" type="Sprite" parent="AnimatedSprite"]
