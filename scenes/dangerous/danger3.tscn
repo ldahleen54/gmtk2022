@@ -483,6 +483,14 @@ position = Vector2( 1656, 144 )
 scale = Vector2( 0.791667, 0.791667 )
 texture = ExtResource( 9 )
 
+[node name="Biggertile95" type="Sprite" parent="Background"]
+position = Vector2( 662, -75 )
+texture = ExtResource( 7 )
+
+[node name="Biggertile96" type="Sprite" parent="Background"]
+position = Vector2( 852, -79 )
+texture = ExtResource( 7 )
+
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="Safe1Teleporter" to="PlayerBody" method="_on_Safe1Teleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
