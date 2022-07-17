@@ -193,3 +193,7 @@ func _on_Secret2Teleporter_body_entered(body):
 func _on_Secret1Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_secret(1)
+
+
+func _on_Randomteleporter3_body_entered(body):
+	pass # Replace with function body.
