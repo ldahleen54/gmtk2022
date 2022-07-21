@@ -46,14 +46,15 @@ position = Vector2( 958.444, 539 )
 scale = Vector2( 2.98889, 2.98889 )
 texture = ExtResource( 1 )
 
+[node name="Selector" type="Sprite" parent="."]
+position = Vector2( 723.999, 740 )
+scale = Vector2( 0.438124, 0.420368 )
+texture = ExtResource( 4 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+process_priority = 1
 position = Vector2( 375, 734 )
 scale = Vector2( 3.0625, 3.0625 )
+z_index = 1
 frames = SubResource( 6 )
-frame = 2
 playing = true
-
-[node name="Selector" type="Sprite" parent="AnimatedSprite"]
-position = Vector2( 113.959, 1.95923 )
-scale = Vector2( 0.143061, 0.137263 )
-texture = ExtResource( 4 )

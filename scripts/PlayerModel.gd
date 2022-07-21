@@ -11,4 +11,7 @@ onready var music_player = get_node("/root/BackgroundMusic")
 func _process(delta):
 	if health <= 0:
 		music_player.change_music("start")
+		print("changed to death scene")
+		self.health = 6
 		get_tree().change_scene("res://scenes/death.tscn")
+	
