@@ -5,6 +5,7 @@ const STARTING_HEALTH = 6
 const STARTING_SCREENS_AWAY = 12
 var health: int = STARTING_HEALTH
 var screens_away: int = STARTING_SCREENS_AWAY
+var in_danger: bool = false
 var position: Vector2 = Vector2()
 onready var music_player = get_node("/root/BackgroundMusic")
 

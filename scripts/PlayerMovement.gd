@@ -70,13 +70,17 @@ func _on_RandomTeleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		print("Randomly teleported to scene: ", scenes[sceneNumber])
 		if sceneNumber > 12:
+			player_model.in_danger = true
 			music_player.change_music("danger")
 			get_tree().change_scene(scenes[sceneNumber])
 		elif sceneNumber == 11 or sceneNumber == 12:
+			player_model.in_danger = false
 			music_player.change_music("secret")
 			get_tree().change_scene(scenes[sceneNumber])
 		else:
+			player_model.in_danger = false
 			music_player.change_music("safe")
+			player_model.screens_away = player_model.STARTING_SCREENS_AWAY - sceneNumber - 1
 			get_tree().change_scene(scenes[sceneNumber])
 		print("sceneNumber", sceneNumber)
 
@@ -89,6 +93,8 @@ func _on_RandomTeleporter3_body_entered(body):
 	
 func change_scene_safe(sceneNumber):
 	var scene = "res://scenes/safe/safe" + sceneNumber as String + ".tscn"
+	# update the number of screens away to the scene number
+	player_model.screens_away = player_model.STARTING_SCREENS_AWAY - sceneNumber
 	music_player.change_music("safe")
 	print("Moved to scene: ", scene)
 	get_tree().change_scene(scene)

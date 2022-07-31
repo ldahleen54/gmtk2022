@@ -9,6 +9,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("hint"):
 		print("hint toggled")
+		
 		if toggled:
 			toggled = !toggled
 			hint_label.set_text("")
@@ -16,5 +17,9 @@ func _process(delta):
 		else:
 			toggled = !toggled
 			hint_box.set_texture(dialog_texture)
-			var text = "You are " + player_model.screens_away as String + " screens away"
+			var text = ""
+			if player_model.in_danger:
+				text = "RUN!"
+			else:
+				text = "You are " + player_model.screens_away as String + " screens away"
 			hint_label.set_text(text)
