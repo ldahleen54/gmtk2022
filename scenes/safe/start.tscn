@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=2]
@@ -13,15 +13,13 @@
 [ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_02.png" type="Texture" id=11]
 [ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=12]
 [ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=13]
+[ext_resource path="res://scripts/Portals/start.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 51.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17, 92 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 96, 21 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 108.623, 28.7962 )
@@ -53,7 +51,11 @@ extents = Vector2( 968.5, 219.5 )
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 309.5, 547 )
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 96, 21 )
+
 [node name="start" type="Node2D"]
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
@@ -82,14 +84,6 @@ position = Vector2( 7, 524 )
 z_index = 1
 shape = SubResource( 2 )
 
-[node name="Safe1Teleporter" type="Area2D" parent="."]
-position = Vector2( 287, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe1Teleporter"]
-position = Vector2( 673, 11 )
-z_index = 1
-shape = SubResource( 3 )
-
 [node name="RandomTeleporter2" type="Area2D" parent="."]
 position = Vector2( 961.5, -5.5 )
 
@@ -108,6 +102,9 @@ z_index = 1
 shape = SubResource( 5 )
 
 [node name="background node" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Biggertile02" type="Sprite" parent="background node"]
 position = Vector2( 184, 624 )
@@ -241,6 +238,9 @@ texture = ExtResource( 7 )
 [node name="Biggertile32" type="Sprite" parent="background node"]
 position = Vector2( -16, 48 )
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Biggertile33" type="Sprite" parent="background node"]
 position = Vector2( 864, 816 )
@@ -415,14 +415,14 @@ scale = Vector2( 0.541667, 0.666667 )
 texture = ExtResource( 9 )
 
 [node name="Bigtree1" type="Sprite" parent="background node"]
-position = Vector2( 936, 120 )
+position = Vector2( 1432, 100 )
 scale = Vector2( 4.71875, 4.71875 )
 texture = ExtResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="background node/Bigtree1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background node/Bigtree1/StaticBody2D"]
-position = Vector2( -1.52588e-05, 13.5629 )
+position = Vector2( -1.52588e-05, 31.3642 )
 shape = SubResource( 6 )
 
 [node name="Biggertile02" type="Sprite" parent="."]
@@ -457,7 +457,11 @@ shape = SubResource( 9 )
 
 [node name="Portals" type="Node2D" parent="."]
 
-[node name="Portal1" type="Sprite" parent="Portals"]
+[node name="Top_Portal" type="Sprite" parent="Portals"]
+position = Vector2( 960, 32 )
+rotation = -1.5708
+
+[node name="Bottom_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 963, 1032 )
 rotation = -1.57079
 texture = ExtResource( 13 )
@@ -481,6 +485,9 @@ shape = SubResource( 10 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/StaticBody2D2"]
 position = Vector2( -282, 537 )
 shape = SubResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Portals"]
 position = Vector2( -5, 537 )
@@ -495,7 +502,14 @@ shape = SubResource( 12 )
 position = Vector2( 2229.5, 537 )
 shape = SubResource( 13 )
 
+[node name="Safe1Teleporter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe1Teleporter"]
+position = Vector2( 960, 11 )
+z_index = 1
+shape = SubResource( 14 )
+
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
-[connection signal="body_entered" from="Safe1Teleporter" to="PlayerBody" method="_on_Safe1Teleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter3" to="PlayerBody" method="_on_RandomTeleporter3_body_entered"]
+[connection signal="body_entered" from="Safe1Teleporter" to="PlayerBody" method="_on_Safe1Teleporter_body_entered"]

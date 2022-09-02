@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/PlayerMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Sprites/James_01.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/Tiles/BiggerTiles/biggertile_01.png" type="Texture" id=9]
 [ext_resource path="res://assets/Tiles/Portal/portal_0.png" type="Texture" id=10]
 [ext_resource path="res://assets/Tiles/Portal/portal_1.png" type="Texture" id=11]
+[ext_resource path="res://scripts/Portals/safe1.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15, 87.6206 )
@@ -44,6 +45,7 @@ extents = Vector2( 10, 547 )
 
 [node name="safe1" type="Node2D"]
 scale = Vector2( 1, 1.00433 )
+script = ExtResource( 12 )
 
 [node name="RandomTeleporter" type="Area2D" parent="."]
 
@@ -482,12 +484,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Portal0" type="Sprite" parent="Portals"]
+[node name="Top_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 960, 40 )
 rotation = -1.57079
 texture = ExtResource( 10 )
 
-[node name="Portal1" type="Sprite" parent="Portals"]
+[node name="Bottom_Portal" type="Sprite" parent="Portals"]
 position = Vector2( 963, 1032 )
 rotation = -1.57079
 texture = ExtResource( 11 )

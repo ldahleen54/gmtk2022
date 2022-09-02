@@ -6,6 +6,8 @@ const STARTING_SCREENS_AWAY = 12
 var health: int = STARTING_HEALTH
 var screens_away: int = STARTING_SCREENS_AWAY
 var in_danger: bool = false
+# number of explored areas the plyaer will traverse them in order
+var explored_up_to: int = 1
 var position: Vector2 = Vector2()
 onready var music_player = get_node("/root/BackgroundMusic")
 
