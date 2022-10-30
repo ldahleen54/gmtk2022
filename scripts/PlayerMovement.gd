@@ -1,3 +1,4 @@
+# TODO Rename file since this file does way more than player movement 
 extends KinematicBody2D
 export (int) var speed = 200
 
@@ -8,35 +9,6 @@ onready var player_node = get_node("PlayerBody")
 
 var receives_knockback: bool = true
 var knockback_modifier: float = 1
-
-# scenes to choose from that can be teleported to includes danger zones that are not on the edge
-const scenes = [
-	"res://scenes/safe/safe1.tscn",
-	"res://scenes/safe/safe2.tscn",
-	"res://scenes/safe/safe3.tscn",
-	"res://scenes/safe/safe4.tscn",
-	"res://scenes/safe/safe5.tscn",
-	"res://scenes/safe/safe6.tscn",
-	"res://scenes/safe/safe7.tscn",
-	"res://scenes/safe/safe8.tscn",
-	"res://scenes/safe/safe9.tscn",
-	"res://scenes/safe/safe10.tscn",
-	"res://scenes/safe/safe11.tscn",
-	"res://scenes/secret/secret1.tscn",
-	"res://scenes/secret/secret2.tscn",
-	"res://scenes/dangerous/danger1.tscn",
-	"res://scenes/dangerous/danger2.tscn",
-	"res://scenes/dangerous/danger3.tscn",
-	"res://scenes/dangerous/danger4.tscn",
-	"res://scenes/dangerous/danger5.tscn",
-	"res://scenes/dangerous/danger6.tscn",
-	"res://scenes/dangerous/danger7.tscn",
-	"res://scenes/dangerous/danger8.tscn",
-	"res://scenes/dangerous/danger9.tscn",
-	"res://scenes/dangerous/danger10.tscn",
-	"res://scenes/dangerous/danger11.tscn",
-	"res://scenes/dangerous/danger12.tscn",
-]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,25 +37,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func _on_RandomTeleporter_body_entered(body):
-	randomize()
-	var sceneNumber = rand_range(0, len(scenes)) as int
 	if body.name == "PlayerBody":
-		print("Randomly teleported to scene: ", scenes[sceneNumber])
-		if sceneNumber > 12:
-			player_model.in_danger = true
-			music_player.change_music("danger")
-			get_tree().change_scene(scenes[sceneNumber])
-		elif sceneNumber == 11 or sceneNumber == 12:
-			player_model.in_danger = false
-			music_player.change_music("secret")
-			get_tree().change_scene(scenes[sceneNumber])
-		else:
-			player_model.in_danger = false
-			music_player.change_music("safe")
-			player_model.screens_away = player_model.STARTING_SCREENS_AWAY - sceneNumber - 1
-			get_tree().change_scene(scenes[sceneNumber])
-		print("sceneNumber", sceneNumber)
-
+		Teleporter.random_teleport(player_model, music_player, get_tree())
 
 func _on_RandomTeleporter2_body_entered(body):
 	_on_RandomTeleporter_body_entered(body)
@@ -235,15 +190,3 @@ func _on_Secret2Teleporter_body_entered(body):
 func _on_Secret1Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_secret(1)
-
-func _on_Randomteleporter3_body_entered(body):
-	pass # Replace with function body.
-
-
-func _on_RandomTeleport_body_entered(body):
-	pass # Replace with function body.
-
-
-func _on_Randomteleporter2_body_entered(body):
-	pass # Replace with function body.
-
