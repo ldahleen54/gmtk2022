@@ -13,6 +13,9 @@ var knockback_modifier: float = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("player health: ", player_model.health)
+	print("Player rooms away: ", player_model.screens_away)
+	player_model.load()
+	print("Player explored up to: ", player_model.explored_up_to)
 	var n = String(name).to_lower()
 
 func get_input():
@@ -80,72 +83,84 @@ func _on_Safe1Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 1:
 			player_model.explored_up_to = 1
+			player_model.save()
 		change_scene_safe(1)
 
 func _on_Safe2Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 2:
 			player_model.explored_up_to = 2
+			player_model.save()
 		change_scene_safe(2)
 
 func _on_Safe3Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 3:
 			player_model.explored_up_to = 3
+			player_model.save()
 		change_scene_safe(3)
 
 func _on_Safe4Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 4:
 			player_model.explored_up_to = 4
+			player_model.save()
 		change_scene_safe(4)
 
 func _on_Safe5Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 5:
 			player_model.explored_up_to = 5
+			player_model.save()
 		change_scene_safe(5)
 
 func _on_Safe6Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 6:
 			player_model.explored_up_to = 6
+			player_model.save()
 		change_scene_safe(6)
 
 func _on_Safe7Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 7:
 			player_model.explored_up_to = 7
+			player_model.save()
 		change_scene_safe(7)
 		
 func _on_Safe8Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 8:
 			player_model.explored_up_to = 8
+			player_model.save()
 		change_scene_safe(8)
 		
 func _on_Safe9Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 9:
 			player_model.explored_up_to = 9
+			player_model.save()
 		change_scene_safe(9)
 
 func _on_Safe10Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 10:
 			player_model.explored_up_to = 10
+			player_model.save()
 		change_scene_safe(10)
 
 func _on_Safe11Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 11:
 			player_model.explored_up_to = 11
+			player_model.save()
 		change_scene_safe(11)
 
 func _on_Safe12Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		if player_model.explored_up_to < 12:
 			player_model.explored_up_to = 12
+			player_model.save()
 		change_scene_safe(12)
 
 func _on_Enemy1_body_entered(body):

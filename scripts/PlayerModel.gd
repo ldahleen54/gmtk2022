@@ -13,8 +13,25 @@ onready var music_player = get_node("/root/BackgroundMusic")
 
 func _process(delta):
 	if health <= 0:
+		# save game so progress is not lost
+		self.save()
 		music_player.change_music("start")
 		print("changed to death scene")
 		self.health = 6
 		get_tree().change_scene("res://scenes/death.tscn")
+
+func save():
+	print("saving...")
+	var file = File.new()
+	file.open("user://bad_day.dat", File.WRITE)
+	file.store_string(str(self.explored_up_to))
+	file.close()
+
+func load():
+	print("loading...")
+	var file = File.new()
+	file.open("user://bad_day.dat", File.READ)
+	var content = file.get_as_text()
+	self.explored_up_to = int(content)
+	file.close()
 	
