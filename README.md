@@ -1,4 +1,4 @@
-GMTK Game jam submission
+GMTK 2022 Game jam submission
 
 # Features Completed
 * Portal colors to change indicating where the player has already been
