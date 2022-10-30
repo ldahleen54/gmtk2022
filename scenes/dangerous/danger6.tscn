@@ -73,9 +73,9 @@ position = Vector2( 968, 1065.5 )
 z_index = 1
 shape = SubResource( 3 )
 
-[node name="Safe1Teleporter" type="Area2D" parent="."]
+[node name="StartTeleporter" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe1Teleporter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter"]
 position = Vector2( 1910.5, 524 )
 z_index = 1
 shape = SubResource( 4 )
@@ -666,6 +666,6 @@ __meta__ = {
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
-[connection signal="body_entered" from="Safe1Teleporter" to="PlayerBody" method="_on_Safe1Teleporter_body_entered"]
+[connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter3" to="PlayerBody" method="_on_RandomTeleporter3_body_entered"]
 [connection signal="body_entered" from="Enemy1/Enemy2" to="PlayerBody" method="_on_Enemy2_body_entered"]

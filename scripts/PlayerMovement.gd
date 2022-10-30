@@ -72,7 +72,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_StartTeleporter_body_entered(body):
 	if body.name == "PlayerBody":
-		print ("Moved to scene: Start")
+		print ("Moved to scene: res://scenes/safe/start.tscn")
 		music_player.change_music("start")
 		get_tree().change_scene("res://scenes/safe/start.tscn")
 
@@ -190,3 +190,10 @@ func _on_Secret2Teleporter_body_entered(body):
 func _on_Secret1Teleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		change_scene_secret(1)
+
+func _on_StartTeleporter2_body_entered(body):
+	_on_StartTeleporter_body_entered(body)
+
+
+func _on_StartTeleporter3_body_entered(body):
+	_on_StartTeleporter_body_entered(body)

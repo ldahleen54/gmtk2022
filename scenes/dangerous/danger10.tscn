@@ -57,15 +57,15 @@ extents = Vector2( 144.557, 67.6913 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Safe10Teleporter" type="Area2D" parent="."]
+[node name="StartTeleporter" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe10Teleporter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter"]
 position = Vector2( 960, 11 )
 shape = SubResource( 2 )
 
-[node name="Safe8Teleporter" type="Area2D" parent="."]
+[node name="StartTeleporter2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe8Teleporter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter2"]
 position = Vector2( 4, 524 )
 shape = SubResource( 3 )
 
@@ -75,9 +75,9 @@ shape = SubResource( 3 )
 position = Vector2( 1904, 520 )
 shape = SubResource( 4 )
 
-[node name="Safe6Teleporter" type="Area2D" parent="."]
+[node name="StartTeleporter3" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe6Teleporter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter3"]
 position = Vector2( 968, 1072.75 )
 shape = SubResource( 5 )
 
@@ -670,8 +670,8 @@ z_index = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1/Enemy2"]
 shape = SubResource( 17 )
 
-[connection signal="body_entered" from="Safe10Teleporter" to="PlayerBody" method="_on_Safe10Teleporter_body_entered"]
-[connection signal="body_entered" from="Safe8Teleporter" to="PlayerBody" method="_on_Safe8Teleporter_body_entered"]
+[connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
+[connection signal="body_entered" from="StartTeleporter2" to="PlayerBody" method="_on_StartTeleporter2_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
-[connection signal="body_entered" from="Safe6Teleporter" to="PlayerBody" method="_on_Safe6Teleporter_body_entered"]
+[connection signal="body_entered" from="StartTeleporter3" to="PlayerBody" method="_on_StartTeleporter3_body_entered"]
 [connection signal="body_entered" from="Enemy1/Enemy2" to="PlayerBody" method="_on_Enemy2_body_entered"]

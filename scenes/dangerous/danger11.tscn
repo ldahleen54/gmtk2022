@@ -64,16 +64,16 @@ position = Vector2( 4, 524 )
 z_index = 1
 shape = SubResource( 2 )
 
-[node name="Safe12Teleporter" type="Area2D" parent="."]
+[node name="StartTeleporter" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe12Teleporter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter"]
 position = Vector2( 1906.5, 520 )
 z_index = 1
 shape = SubResource( 3 )
 
-[node name="Safe10Teleporter" type="Area2D" parent="."]
+[node name="StartTeleporter2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe10Teleporter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartTeleporter2"]
 position = Vector2( 960, 1067 )
 z_index = 1
 shape = SubResource( 4 )
@@ -526,7 +526,7 @@ __meta__ = {
 
 [connection signal="body_entered" from="RandomTeleporter" to="PlayerBody" method="_on_RandomTeleporter_body_entered"]
 [connection signal="body_entered" from="RandomTeleporter2" to="PlayerBody" method="_on_RandomTeleporter2_body_entered"]
-[connection signal="body_entered" from="Safe12Teleporter" to="PlayerBody" method="_on_Safe12Teleporter_body_entered"]
-[connection signal="body_entered" from="Safe10Teleporter" to="PlayerBody" method="_on_Safe10Teleporter_body_entered"]
+[connection signal="body_entered" from="StartTeleporter" to="PlayerBody" method="_on_StartTeleporter_body_entered"]
+[connection signal="body_entered" from="StartTeleporter2" to="PlayerBody" method="_on_StartTeleporter2_body_entered"]
 [connection signal="body_entered" from="Enemy1/Enemy2" to="PlayerBody" method="_on_Enemy2_body_entered"]
 [connection signal="body_entered" from="Enemy2/Enemy2" to="PlayerBody" method="_on_Enemy2_body_entered"]
