@@ -34,3 +34,6 @@ func change_music(area: String):
 		# default case
 		print("Playing the default music. Please assign music to this scene.")
 		player.stream = load("res://assets/music/safezone.mp3")
+
+func stop_music():
+	player.stop()

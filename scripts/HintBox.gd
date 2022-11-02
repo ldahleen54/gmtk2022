@@ -6,10 +6,7 @@ onready var dialog_texture = preload("res://assets/UI/popup3.png")
 onready var player_model = get_node("/root/PlayerModel")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	if Input.is_action_just_pressed("hint"):
-		print("hint toggled")
-		
 		if toggled:
 			toggled = !toggled
 			hint_label.set_text("")

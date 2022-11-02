@@ -76,7 +76,7 @@ func _on_Area2D_body_entered(body):
 func _on_StartTeleporter_body_entered(body):
 	if body.name == "PlayerBody":
 		print ("Moved to scene: res://scenes/safe/start.tscn")
-		music_player.change_music("start")
+		music_player.change_music("safe")
 		get_tree().change_scene("res://scenes/safe/start.tscn")
 
 func _on_Safe1Teleporter_body_entered(body):
@@ -175,7 +175,7 @@ func _on_Enemy2_body_entered(body):
 		
 func _on_Spring_body_entered(body):
 	if body.name == "PlayerBody":
-		var scene = "res://scenes/credits.tscn"
+		var scene = "res://scenes/ui/credits.tscn"
 		print("Moved to scene: ", scene)
 		music_player.change_music("credits")
 		get_tree().change_scene(scene)
